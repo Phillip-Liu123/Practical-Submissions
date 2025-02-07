@@ -16,5 +16,8 @@ book:
   chapters:
   - index.qmd
   - Practical One.qmd
+  - Practical Two.qmd
+  
+  
 
 
