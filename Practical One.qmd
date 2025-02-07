@@ -1,0 +1,96 @@
+---
+title: "Practical One"
+format: html
+---
+
+---
+title: "Practical One"
+---
+
+## Question 1
+
+```{r}
+airquality_missing <- airquality[!complete.cases(airquality),]
+airquality_missing
+```
+
+## Question 2
+
+```{r}
+mean_tmp_ozone <- mean(airquality$Ozone, na.rm = TRUE)
+mean_tmp_ozone
+```
+
+```{r}
+mean_tmp_temp <- mean(airquality$Temp, na.rm = TRUE)
+mean_tmp_temp
+```
+
+```{r}
+sd_tmp_ozone <- sd(airquality$Ozone, na.rm = TRUE)
+sd_tmp_ozone
+```
+
+```{r}
+sd_tmp_temp <- sd(airquality$Temp, na.rm = TRUE)
+sd_tmp_temp
+```
+
+```{r}
+min_tmp_ozone <- min(airquality$Ozone, na.rm = TRUE)
+min_tmp_ozone
+```
+
+```{r}
+min_tmp_temp <- min(airquality$Temp, na.rm = TRUE)
+min_tmp_temp
+```
+
+```{r}
+max_tmp_ozone <- max(airquality$Ozone, na.rm = TRUE)
+max_tmp_ozone
+```
+
+```{r}
+max_tmp_temp <- max(airquality$Temp, na.rm = TRUE)
+max_tmp_temp
+```
+
+## Question 3
+
+```{r}
+
+df <- cars
+x_matrix <- matrix(df$speed)
+y_matrix <- matrix(df$dist)
+
+lin_reg <- function(x,y){
+  x_mat <- cbind(1,x)
+  beta <- solve(t(x_mat)%*%(x_mat))%*%t(x_mat)%*%y #estimated coefficients
+  
+  residuals <- y - x_mat %*% beta #residuals
+  
+  MSE <- (t(residuals)%*%residuals)/(length(y)-2) #mean squared errors
+  MSE <- sum(MSE)
+  
+  var_beta <- MSE * solve(t(x_mat)%*%x_mat)
+  
+  se <- diag(sqrt(var_beta)) #standard error
+  
+  t_val <- beta/se #t statistics
+
+  p_val <- 2*(1-pt(abs(t_val), df = length(y)-2)) #p value
+  
+  return(list('coefficients' = beta, 'std error' = se, 't statistic' = t_val, 'p-value' = p_val))
+}
+lin_reg(x_matrix,y_matrix)
+
+```
+
+## Question 4
+
+```{r}
+df <- cars
+model <- lm(df$dist ~ df$speed, data = df)
+summary(model)
+```

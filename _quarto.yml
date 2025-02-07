@@ -1,5 +1,20 @@
 project:
   title: "Practical Submissions"
-
+  type: book
+  render:
+  - index.qmd
+  output-dir: docs
+book:
+  title: "Practical Submissions"
+  sidebar:
+    border: true
+    background: light
+    position: right
+  navbar:
+    search: true
+    background: light
+  chapters:
+  - index.qmd
+  - Practical One.qmd
 
 
