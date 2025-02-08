@@ -3,4 +3,58 @@ title: "Practical Two"
 format: html
 ---
 
+```{r}
+# generating data
+set.seed(1)
+x <- 1:100
+e_term <- rnorm(100,0,0.2^(2))
+y <- sin(x/100) + e_term
 
+# calculating weights
+  
+
+
+# custom function to implement the LOWESS algorithm
+
+customLowess <- function(x, y, f){
+  
+  # calculating span
+  n <- length(x)
+  k <- ceiling(f*n)
+  y_pred <- numeric(n) # initializing vector
+  
+  for (i in 1:100) {
+  # computing distances
+    distances <- abs(x-x[i])
+  
+  # selecting neighbours
+    nhbr_ind <- order(distances)[1:k]
+    x_nhbr <- x[nhbr_ind]
+    y_nhbr <- y[nhbr_ind]
+    
+  # computing the weights
+    d_max <- max(distances[nhbr_ind])
+    weights <- (1-(distances[nhbr_ind]/d_max)^3)^3
+    weights[distances[nhbr_ind]>=d_max]<-0
+    
+  # performing weighted linear regression 
+    X <- cbind(1, x_nhbr)
+    W <- diag(weights)
+    beta <- solve(t(X) %*% W %*% X) %*% (t(X) %*% W %*% y_nhbr)
+    
+    y_pred[i] <- beta[1] + beta[2] * x[i]
+  }
+  return(y_pred)
+}
+
+model_custom <-customLowess(x,y,f=1/10) # f is a hyper parameter
+model_custom
+summary(model_custom)
+```
+```{r}
+# comparison with built-in R LOWESS function
+
+model_R <- lowess(x,y,f=1/10,iter = 0)
+model_R
+summary(model_R)
+```
