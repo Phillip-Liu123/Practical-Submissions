@@ -3,6 +3,8 @@ title: "Practical Two"
 format: html
 ---
 
+## Customer LOWESS function output
+
 ```{r}
 # generating data
 set.seed(1)
@@ -49,12 +51,13 @@ customLowess <- function(x, y, f){
 
 model_custom <-customLowess(x,y,f=1/10) # f is a hyper parameter
 model_custom
-summary(model_custom)
 ```
+
+## R LOWESS function output
+
 ```{r}
 # comparison with built-in R LOWESS function
 
 model_R <- lowess(x,y,f=1/10,iter = 0)
 model_R
-summary(model_R)
 ```
