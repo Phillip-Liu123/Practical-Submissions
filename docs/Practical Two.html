@@ -161,8 +161,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#customer-lowess-function-output" id="toc-customer-lowess-function-output" class="nav-link active" data-scroll-target="#customer-lowess-function-output"><span class="header-section-number">3.1</span> Customer LOWESS function output</a></li>
+  <li><a href="#r-lowess-function-output" id="toc-r-lowess-function-output" class="nav-link" data-scroll-target="#r-lowess-function-output"><span class="header-section-number">3.2</span> R LOWESS function output</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -186,6 +193,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="customer-lowess-function-output" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="customer-lowess-function-output"><span class="header-section-number">3.1</span> Customer LOWESS function output</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generating data</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
@@ -251,17 +260,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  [91]  0.80768063  0.82017396  0.83030340  0.83448809  0.83276011  0.82609094
  [97]  0.81864062  0.81074026  0.80265137  0.79496324</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_custom)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
--0.001151  0.238704  0.491655  0.467844  0.670212  0.834488 </code></pre>
 </div>
-</div>
+</section>
+<section id="r-lowess-function-output" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="r-lowess-function-output"><span class="header-section-number">3.2</span> R LOWESS function output</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison with built-in R LOWESS function</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>model_R <span class="ot">&lt;-</span> <span class="fu">lowess</span>(x,y,<span class="at">f=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>,<span class="at">iter =</span> <span class="dv">0</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>model_R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison with built-in R LOWESS function</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>model_R <span class="ot">&lt;-</span> <span class="fu">lowess</span>(x,y,<span class="at">f=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>,<span class="at">iter =</span> <span class="dv">0</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>model_R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$x
   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
@@ -290,15 +297,10 @@ $y
  [91]  0.80768063  0.82017396  0.83030340  0.83448809  0.83276011  0.82609094
  [97]  0.81864062  0.81074026  0.80265137  0.79496324</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_R)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Length Class  Mode   
-x 100    -none- numeric
-y 100    -none- numeric</code></pre>
-</div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

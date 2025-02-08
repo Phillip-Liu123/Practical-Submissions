@@ -3,7 +3,7 @@ title: "Practical Two"
 format: html
 ---
 
-## Customer LOWESS function output
+## Custom LOWESS function output
 
 ```{r}
 # generating data
