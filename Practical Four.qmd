@@ -3,23 +3,76 @@ title: "Practical Four"
 format: html
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Question 1
 
 ```{r}
-1 + 1
+library(UtilsDataRSV)
+library(nycflights13)
+library(dplyr)
+head(flights)
+UtilsDataRSV::view_cols(flights)
+
 ```
 
-You can add options to executable code like this 
+## Question 2
 
 ```{r}
-#| echo: false
-2 * 2
+
+flight1 <- flights |> filter(month == 1)
+
+carrier_vec <- flight1$carrier |> unique() 
+carrier_dist_vec_mean <- length(carrier_vec) |> numeric()
+carrier_dist_vec_sd <- length(carrier_vec) |> numeric()
+
+for (i in seq_along(carrier_vec)) {
+  carrier_dist_vec_mean[i]<- flight1 |> as_tibble() |> filter(carrier == carrier_vec[i]) |> pull(distance) |>mean()
+  
+  carrier_dist_vec_sd[i]<- flight1 |> as_tibble() |> filter(carrier == carrier_vec[i]) |> pull(distance) |> sd()
+}
+
+dist_tbl <- tibble(
+  carrier = carrier_vec,
+  mean_distance = carrier_dist_vec_mean,
+  sd_distance = carrier_dist_vec_sd
+)
+
+dist_tbl <- dist_tbl |> arrange(mean_distance)
+dist_tbl
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+## Question 3
+
+```{r}
+
+
+
+```
+
+## Question 4
+
+```{r}
+data <- flights |> select(dep_delay, carrier, month) |> arrange(month)
+
+data2 <- data |>
+  summarise(mean_dep_delay = mean(dep_delay, na.rm = TRUE), .by = c(month, carrier))
+
+df <- data2 |> pivot_wider(
+  id_cols = ("month"),
+  names_from = ("carrier"),
+  values_from = ("mean_dep_delay")
+)
+df
+```
+
+## Question 5
+
+```{r}
+total_flights <- flights |> nrow()
+
+flights_int <- flights |> filter(dep_delay>0) |> filter(arr_delay<= 0)
+
+prop_flights <- nrow(flights_int)/total_flights
+prop_flights
+```
+
+## Question 6
