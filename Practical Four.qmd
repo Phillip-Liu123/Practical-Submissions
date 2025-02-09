@@ -76,3 +76,46 @@ prop_flights
 ```
 
 ## Question 6
+
+### 6.1
+
+```{r}
+multi_al_rout <- flights |> group_by(origin,dest) |> summarise(n_al = n_distinct(carrier), .groups = "drop") |> filter(n_al >1)
+
+multi_al_rout
+```
+
+### 6.2
+
+```{r}
+ avg_arr_del <- flights |> inner_join(multi_al_rout, by = c("origin", "dest")) |> group_by(origin,dest,carrier) |> summarise(avg_arr_del=mean(arr_delay,na.rm=TRUE), .groups = "drop")
+ 
+ avg_arr_del
+```
+
+### 6.3
+
+```{r}
+avg_arr_del_airlines <- avg_arr_del |> left_join(airlines, by = "carrier") 
+
+route_results <- avg_arr_del_airlines |> group_by(origin,dest) |>
+  summarise(
+    fastest_airline = name[which.max(avg_arr_del)],
+    fastest_airline_del = min(avg_arr_del, na.rm = TRUE),
+    slowest_airline = name[which.min(avg_arr_del)],
+    slowest_airline_del = max(avg_arr_del, na.rm = TRUE),
+    .groups = "drop"
+  )
+```
+
+### 6.4
+
+```{r}
+route_arr_del_diff <- route_results |> mutate(del_diff = fastest_airline_del - slowest_airline_del)
+
+route_max_del_diff <- route_arr_del_diff |> slice_max(abs(del_diff))
+
+route_max_del_diff
+```
+
+### 6.5
