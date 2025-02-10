@@ -263,76 +263,76 @@ Attaching package: 'dplyr'</code></pre>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>UtilsDataRSV<span class="sc">::</span><span class="fu">view_cols</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "year"
-[1] 1495
+[1] 1603
 [1] "_____________________"
 [1] "month"
-[1] 11  5  8  7  4
+[1]  4  3 10  8  2
 [1] "_____________________"
 [1] "day"
-[1] 15 12 17 11 21
+[1] 12 16 14 22  3
 [1] "_____________________"
 [1] "dep_time"
-[1] 1713 1717  710 1809   NA
+[1] 1208 2130 1046  148   NA
 [1] "_____________________"
 [1] "sched_dep_time"
-[1] 2009 1920 1422 1312 1647
+[1] 1035 1814  851 1904 1329
 [1] "_____________________"
 [1] "dep_delay"
-[1] 380  84 189 120  NA
+[1] 174 576 156 162  NA
 [1] "_____________________"
 [1] "arr_time"
-[1]   14 2008 1514 1742   NA
+[1] 1919 2140 1605  704   NA
 [1] "_____________________"
 [1] "sched_arr_time"
-[1]  934  149  805 1327 1148
+[1]  853 1522 1021  814 2015
 [1] "_____________________"
 [1] "arr_delay"
-[1]  14 194 267 -19  NA
+[1] 186 218 296 301  NA
 [1] "_____________________"
 [1] "carrier"
- [1] "AS" "AA" "F9" "US" "9E" "EV" "VX" "OO" "FL" "B6" "YV" "DL" "WN" "UA" "HA"
-[16] "MQ"
+ [1] "F9" "MQ" "WN" "FL" "9E" "OO" "VX" "HA" "DL" "YV" "AS" "EV" "AA" "UA" "US"
+[16] "B6"
 [1] "_____________________"
 [1] "flight"
-[1] 1275 4423  354  482 2131
+[1] 5164 3226 4511 1052 1709
 [1] "_____________________"
 [1] "tailnum"
- [1] "N550WN" "N21154" "N212WN" "N20904" "N719EV" "N68160" "N339NW" "N75435"
- [9] "N16541" "N8914A" "N627AW" "N220WN" "N529UA" "N5ELAA" "N5DJAA" "N343NW"
-[17] "N666DN" "N5CEAA" "N953FR" NA      
+ [1] "N806UA" "N3CVAA" "N149AT" "N646MQ" "N764US" "N851VA" "N837AW" "N927XJ"
+ [9] "N514UA" "N784JB" "N847VA" "N723MQ" "N529UA" "N980DL" "N34455" "N5EAAA"
+[17] "N14179" "N442WN" "N412WN" NA      
 [1] "4024 unique entries not displayed"
 [1] "_____________________"
 [1] "origin"
-[1] "LGA" "JFK" "EWR"
+[1] "EWR" "JFK" "LGA"
 [1] "_____________________"
 [1] "dest"
- [1] "DTW" "MCI" "HNL" "EYW" "BWI" "SRQ" "MYR" "CAE" "AUS" "AVL" "TPA" "CAK"
-[13] "RDU" "MSP" "JAC" "JAX" "TVC" "SJU" "MCO" "MTJ"
+ [1] "STT" "CHS" "LGB" "BDL" "DTW" "ROC" "SMF" "SJU" "EGE" "DAY" "MEM" "BZN"
+[13] "MKE" "OMA" "PDX" "SAT" "ANC" "PBI" "SYR" "LAX"
 [1] "85 unique entries not displayed"
 [1] "_____________________"
 [1] "air_time"
-[1] 361 638  20  94  NA
+[1] 620 120  46 211  NA
 [1] "_____________________"
 [1] "distance"
-[1]  725  173 1882 1080  502
+[1] 4983  213  541 1065 1826
 [1] "_____________________"
 [1] "hour"
-[1] 20 13 23 18 11
+[1] 18 13 11 23 12
 [1] "_____________________"
 [1] "minute"
-[1] 47  6 30 48 12
+[1] 31 27 45 42 55
 [1] "_____________________"
 [1] "time_hour"
- [1] "2013-01-30 12:00:00 EST" "2013-02-27 08:00:00 EST"
- [3] "2013-06-02 15:00:00 EDT" "2013-02-20 19:00:00 EST"
- [5] "2013-03-17 06:00:00 EDT" "2013-01-21 12:00:00 EST"
- [7] "2013-08-14 18:00:00 EDT" "2013-09-23 16:00:00 EDT"
- [9] "2013-05-30 06:00:00 EDT" "2013-11-30 08:00:00 EST"
-[11] "2013-07-28 20:00:00 EDT" "2013-04-19 09:00:00 EDT"
-[13] "2013-04-10 22:00:00 EDT" "2013-04-04 23:00:00 EDT"
-[15] "2013-08-08 12:00:00 EDT" "2013-01-16 10:00:00 EST"
-[17] "2013-09-16 13:00:00 EDT" "2013-08-12 11:00:00 EDT"
-[19] "2013-04-30 09:00:00 EDT" "2013-12-21 21:00:00 EST"
+ [1] "2013-02-05 12:00:00 EST" "2013-02-07 08:00:00 EST"
+ [3] "2013-05-27 05:00:00 EDT" "2013-07-09 16:00:00 EDT"
+ [5] "2013-06-02 10:00:00 EDT" "2013-04-22 08:00:00 EDT"
+ [7] "2013-03-13 10:00:00 EDT" "2013-11-22 10:00:00 EST"
+ [9] "2013-10-23 23:00:00 EDT" "2013-02-08 12:00:00 EST"
+[11] "2013-03-25 21:00:00 EDT" "2013-09-03 15:00:00 EDT"
+[13] "2013-12-12 09:00:00 EST" "2013-09-14 19:00:00 EDT"
+[15] "2013-04-12 09:00:00 EDT" "2013-10-04 16:00:00 EDT"
+[17] "2013-11-11 10:00:00 EST" "2013-05-10 09:00:00 EDT"
+[19] "2013-06-26 18:00:00 EDT" "2013-07-29 17:00:00 EDT"
 [1] "6916 unique entries not displayed"
 [1] "_____________________"</code></pre>
 </div>
@@ -484,9 +484,11 @@ dest, time_hour</code></pre>
 <section id="section-1" class="level3" data-number="4.6.2">
 <h3 data-number="4.6.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">4.6.2</span> 6.2</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a> avg_arr_del <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> <span class="fu">inner_join</span>(multi_al_rout, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"origin"</span>, <span class="st">"dest"</span>)) <span class="sc">|&gt;</span> <span class="fu">group_by</span>(origin,dest,carrier) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">avg_arr_del=</span><span class="fu">mean</span>(arr_delay,<span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> <span class="fu">left_join</span>(airlines, <span class="at">by =</span> <span class="st">"carrier"</span>)</span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a> avg_arr_del <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> <span class="fu">inner_join</span>(multi_al_rout, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"origin"</span>, <span class="st">"dest"</span>)) <span class="sc">|&gt;</span> <span class="fu">group_by</span>(origin,dest,carrier) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">avg_arr_del=</span><span class="fu">mean</span>(arr_delay,<span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a> avg_arr_del</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a> avg_arr_del_wnames <span class="ot">&lt;-</span> avg_arr_del <span class="sc">|&gt;</span> <span class="fu">left_join</span>(airlines, <span class="at">by =</span> <span class="st">"carrier"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>avg_arr_del_wnames</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 343 × 5
    origin dest  carrier avg_arr_del name                    
@@ -512,27 +514,27 @@ dest, time_hour</code></pre>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>route_results <span class="ot">&lt;-</span> avg_arr_del_airlines <span class="sc">|&gt;</span> <span class="fu">group_by</span>(origin,dest) <span class="sc">|&gt;</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">fastest_airline =</span> name.x[<span class="fu">which.max</span>(avg_arr_del)],</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">fastest_airline =</span> name[<span class="fu">which.max</span>(avg_arr_del)],</span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">fastest_airline_del =</span> <span class="fu">min</span>(avg_arr_del, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">slowest_airline =</span> name.x[<span class="fu">which.min</span>(avg_arr_del)],</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">slowest_airline =</span> name[<span class="fu">which.min</span>(avg_arr_del)],</span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">slowest_airline_del =</span> <span class="fu">max</span>(avg_arr_del, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>avg_arr_del_airlines</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 343 × 6
-   origin dest  carrier avg_arr_del name.x                   name.y             
-   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;                    &lt;chr&gt;              
- 1 EWR    ATL   9E            -6.25 Endeavor Air Inc.        Endeavor Air Inc.  
- 2 EWR    ATL   DL            10.0  Delta Air Lines Inc.     Delta Air Lines In…
- 3 EWR    ATL   EV            19.5  ExpressJet Airlines Inc. ExpressJet Airline…
- 4 EWR    ATL   UA            10.5  United Air Lines Inc.    United Air Lines I…
- 5 EWR    AUS   UA             4.28 United Air Lines Inc.    United Air Lines I…
- 6 EWR    AUS   WN           -11.2  Southwest Airlines Co.   Southwest Airlines…
- 7 EWR    BDL   EV             6.78 ExpressJet Airlines Inc. ExpressJet Airline…
- 8 EWR    BDL   UA            22.6  United Air Lines Inc.    United Air Lines I…
- 9 EWR    BNA   EV            17.7  ExpressJet Airlines Inc. ExpressJet Airline…
-10 EWR    BNA   WN            -2.13 Southwest Airlines Co.   Southwest Airlines…
+<pre><code># A tibble: 343 × 5
+   origin dest  carrier avg_arr_del name                    
+   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;                   
+ 1 EWR    ATL   9E            -6.25 Endeavor Air Inc.       
+ 2 EWR    ATL   DL            10.0  Delta Air Lines Inc.    
+ 3 EWR    ATL   EV            19.5  ExpressJet Airlines Inc.
+ 4 EWR    ATL   UA            10.5  United Air Lines Inc.   
+ 5 EWR    AUS   UA             4.28 United Air Lines Inc.   
+ 6 EWR    AUS   WN           -11.2  Southwest Airlines Co.  
+ 7 EWR    BDL   EV             6.78 ExpressJet Airlines Inc.
+ 8 EWR    BDL   UA            22.6  United Air Lines Inc.   
+ 9 EWR    BNA   EV            17.7  ExpressJet Airlines Inc.
+10 EWR    BNA   WN            -2.13 Southwest Airlines Co.  
 # ℹ 333 more rows</code></pre>
 </div>
 </div>
@@ -662,52 +664,52 @@ dest, time_hour</code></pre>
 <span id="cb31-99"><a href="#cb31-99" aria-hidden="true" tabindex="-1"></a>UtilsDataRSV<span class="sc">::</span><span class="fu">view_cols</span>(df7)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "id"
- [1] "id_47" "id_17" "id_27" "id_23" "id_12" "id_41" "id_32" "id_31" "id_19"
-[10] "id_45" "id_49" "id_24" "id_39" "id_26" "id_44" "id_29" "id_40" "id_38"
-[19] "id_50" "id_22"
+ [1] "id_42" "id_36" "id_50" "id_29" "id_8"  "id_48" "id_18" "id_26" "id_9" 
+[10] "id_21" "id_7"  "id_38" "id_16" "id_13" "id_20" "id_10" "id_23" "id_44"
+[19] "id_6"  "id_14"
 [1] "30 unique entries not displayed"
 [1] "_____________________"
 [1] "age"
-[1] 76 55 54 48 22
+[1] 24 45 36 51 70
 [1] "_____________________"
 [1] "gender"
-[1] "female" "femal"  "male"  
+[1] "female" "male"   "femal" 
 [1] "_____________________"
 [1] "height"
-[1] 150.5 199.0 154.6 186.0    NA
+[1] 162.3 157.1 161.6 194.5    NA
 [1] "_____________________"
 [1] "weight"
-[1] 95.1 85.4 60.9 65.6 98.1
+[1] 67.8 74.1 76.7 93.2 73.3
 [1] "_____________________"
 [1] "blood_type"
-[1] "O"  "B"  "A"  "AB"
+[1] "B"  "O"  "A"  "AB"
 [1] "_____________________"
 [1] "disease_status"
-[1] "diseased" "Healthy"  "healthy" 
+[1] "diseased" "healthy"  "Healthy" 
 [1] "_____________________"
 [1] "cholesterol"
-[1] 187 224 233 195 181
+[1] 180 230 189 153 233
 [1] "_____________________"
 [1] "glucose"
-[1]  75 103  91  78  NA
+[1]  90 118  93  99  NA
 [1] "_____________________"
 [1] "smoker"
 [1] "no"  "yes"
 [1] "_____________________"
 [1] "exercise"
-[1] "occasional" "regular"    "none"      
+[1] "occasional" "none"       "regular"   
 [1] "_____________________"
 [1] "income"
-[1] 86851 37940 55810 55360 96351
+[1] 81318 58269 22588 78611 41927
 [1] "_____________________"
 [1] "education"
-[1] "PhD"        "master"     "bachelor"   "highschool"
+[1] "highschool" "master"     "PhD"        "bachelor"  
 [1] "_____________________"
 [1] "region"
-[1] "North" "West"  "East"  "South"
+[1] "South" "North" "East"  "West" 
 [1] "_____________________"
 [1] "marital_status"
-[1] "divorced" "single"   "married"  "widowed" 
+[1] "widowed"  "single"   "divorced" "married" 
 [1] "_____________________"</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
