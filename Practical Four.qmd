@@ -9,6 +9,7 @@ format: html
 library(UtilsDataRSV)
 library(nycflights13)
 library(dplyr)
+library(tidyr)
 head(flights)
 UtilsDataRSV::view_cols(flights)
 
@@ -42,10 +43,18 @@ dist_tbl
 
 ## Question 3
 
+The standard deviation of a data set with only one value will be NA
+
 ```{r}
+test1 <- c(5)
+sd(test1)
+```
 
+The standard deviation of a data set with multiple elements of the same value will be zero
 
-
+```{r}
+test2 <- c(5,5,5)
+sd(test2)
 ```
 
 ## Question 4
@@ -88,7 +97,7 @@ multi_al_rout
 ### 6.2
 
 ```{r}
- avg_arr_del <- flights |> inner_join(multi_al_rout, by = c("origin", "dest")) |> group_by(origin,dest,carrier) |> summarise(avg_arr_del=mean(arr_delay,na.rm=TRUE), .groups = "drop")
+ avg_arr_del <- flights |> inner_join(multi_al_rout, by = c("origin", "dest")) |> group_by(origin,dest,carrier) |> summarise(avg_arr_del=mean(arr_delay,na.rm=TRUE), .groups = "drop") |> left_join(airlines, by = "carrier")
  
  avg_arr_del
 ```
@@ -106,6 +115,7 @@ route_results <- avg_arr_del_airlines |> group_by(origin,dest) |>
     slowest_airline_del = max(avg_arr_del, na.rm = TRUE),
     .groups = "drop"
   )
+avg_arr_del_airlines
 ```
 
 ### 6.4
@@ -121,6 +131,7 @@ route_max_del_diff
 ### 6.5
 
 ```{r}
+
 
 ```
 
