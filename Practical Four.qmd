@@ -9,7 +9,7 @@ format: html
 library(UtilsDataRSV)
 library(nycflights13)
 library(dplyr)
-library(tidyr)
+library(tidyverse)
 head(flights)
 UtilsDataRSV::view_cols(flights)
 
@@ -109,9 +109,9 @@ avg_arr_del_airlines <- avg_arr_del |> left_join(airlines, by = "carrier")
 
 route_results <- avg_arr_del_airlines |> group_by(origin,dest) |>
   summarise(
-    fastest_airline = name[which.max(avg_arr_del)],
+    fastest_airline = name.x[which.max(avg_arr_del)],
     fastest_airline_del = min(avg_arr_del, na.rm = TRUE),
-    slowest_airline = name[which.min(avg_arr_del)],
+    slowest_airline = name.x[which.min(avg_arr_del)],
     slowest_airline_del = max(avg_arr_del, na.rm = TRUE),
     .groups = "drop"
   )
