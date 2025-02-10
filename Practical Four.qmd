@@ -132,12 +132,19 @@ route_max_del_diff
 
 ### 6.5
 
-```{r}
-
-
-```
+### This difference in flight times is possible due to the size of aircraft at each of the different airlines, as well as whether they are carrying cargo or people. Bigger aircraft generally are able to fly faster but take longer to load. And cargo takes longer to load and offload compared to passengers. This means that the faster airlines could be in the business of large passenger planes while slower airlines are using small cargo planes.
 
 ## Question 7
+
+### Columns with typos:
+
+#### 1. gender  - "femal" are the typo and should be "female"
+
+#### 2. disease_status "Health" is the typo and should be "health"
+
+### Columns with missing values:
+
+#### 3. height and glucose both have missing values in the form of NA
 
 ```{r}
 df7 <- structure(list(id = c("id_1", "id_2", "id_3", "id_4", "id_5", 
@@ -239,12 +246,5 @@ NA, 77, 80, 115, 85, 88, 109, NA, 71, 90, 94, 91, 87, 113, 93,
 ), class = c("tbl_df", "tbl", "data.frame"))
 
 UtilsDataRSV::view_cols(df7)
-
-# columns with typos
-# gender and disease_status
-df7$gender[df7$gender == "femal"] <- "female"
-df7$disease_status[df7$disease_status == "Healthy"]<- "healthy"
-# columns with missing values 
-# height and glucose
 
 ```
